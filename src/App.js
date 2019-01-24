@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import pictures from './pictures.json';
+import Scoreboard from './components/Scoreboard';
 
 class App extends Component {
 
@@ -9,12 +10,16 @@ class App extends Component {
     topScore: 0,
     waterTowers: pictures
   };
-  
+
   render() {
     return (
       <div>
-        <h1>World of Water Towers</h1>
-        <p>{pictures[0].name}</p>
+        <Scoreboard />
+        <div className="row">
+        <div className="col-md-12">
+          <p>{pictures[0].name}</p>
+          </div>
+        </div>
       </div>
     );
   }
