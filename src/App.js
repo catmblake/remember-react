@@ -21,8 +21,7 @@ class App extends Component {
         if (towers[i].clicked === false) {
           towers[i].clicked = true;
           this.setState({ score: this.state.score + 1 });
-          this.state.towers.sort(() => Math.random() - 0.5)
-          return true;
+          return this.state.towers.sort(() => Math.random() - 0.5)
         } else {
           this.newRound();
         }
@@ -35,11 +34,10 @@ class App extends Component {
       this.setState({ topScore: this.state.score });
     }
     this.state.towers.forEach(tower => {
-      tower.clicked = false;
+      return tower.clicked = false;
     });
     alert(`Washed Out! \nScore: ${this.state.score}`);
     this.setState({ score: 0 });
-    return true;
   }
 
   render() {
