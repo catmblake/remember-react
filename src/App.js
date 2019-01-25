@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     score: 0,
     topScore: 0,
-    waterTowers: pictures
+    pictures
   };
 
   render() {
@@ -16,8 +16,10 @@ class App extends Component {
       <div>
         <Scoreboard />
         <div className="row">
-        <div className="col-md-12">
-          <p>{pictures[0].name}</p>
+          <div className="col-md-12">
+            {this.state.pictures.map(tower => (
+              <img id={tower.id} src={tower.image} alt={tower.name}></img>
+            ))}
           </div>
         </div>
       </div>
