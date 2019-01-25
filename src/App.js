@@ -37,7 +37,7 @@ class App extends Component {
     this.state.towers.forEach(tower => {
       tower.clicked = false;
     });
-    alert(`Game over! Please try again. \nscore: ${this.state.score}`);
+    alert(`Washed Out! \nScore: ${this.state.score}`);
     this.setState({ score: 0 });
     return true;
   }
