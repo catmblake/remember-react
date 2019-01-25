@@ -16,17 +16,26 @@ class App extends Component {
   };
 
   handleClickEvent = id => {
-    this.state.towers.find((card, i) => {
-      if (card.id === id) {
-        if (towers[i].clicked === false) {
-          towers[i].clicked = true;
+    this.state.towers.sort(() => Math.random() - 0.5)
+    this.state.towers.filter(card => {
+      if (id === card.id) {
+        if (card.clicked === false) {
+          card.clicked = true;
           this.setState({ score: this.state.score + 1 });
-          return this.state.towers.sort(() => Math.random() - 0.5)
+          
         } else {
           this.newRound();
         }
-      }
+      } 
     });
+    // when card is clicked on
+    // shuffle the array
+    // check if card has been clicked on before 
+        // if it has been
+        // reset the score 
+
+        // if it hasn't been
+        // update the score
   }
 
   newRound = () => {
