@@ -6,8 +6,8 @@ const Jumbotron = props =>
   (
     <div className="jumbotron jumbotron-fluid">
     <div className="container">
-      <h1 className="display-4">Click any tower to score a point, but don't click the same one twice!</h1>
-      <p className="lead">{props.message}</p>
+      <h1 className="display-4">{props.message}</h1>
+      <h3 className="lead">Click any tower to score, but don't click the same one twice!</h3>
     </div>
   </div>
   );

@@ -11,6 +11,7 @@ class App extends Component {
   // Setting this.state.towers to the towers json array
   state = {
     towers,
+    message: "Click an image to begin!",
     score: 0,
     topScore: 0
   };
@@ -21,7 +22,10 @@ class App extends Component {
       if (id === card.id) {
         if (card.clicked === false) {
           card.clicked = true;
-          this.setState({ score: this.state.score + 1 });
+          this.setState({ 
+            score: this.state.score + 1,
+            message: "That was a great choice!" 
+          });
           if (this.state.score >= this.state.topScore) {
             this.setState({topScore: this.state.topScore +1})
           }
@@ -42,8 +46,10 @@ class App extends Component {
     this.state.towers.forEach(tower => {
       return tower.clicked = false;
     });
-    alert(`Washed Out! \nScore: ${this.state.score}`);
-    this.setState({ score: 0 });
+    this.setState({
+      message: "Uh oh, you already chose that one! \n Game restarted. Try Again!",
+      score: 0 
+    });
   }
 
   render() {
