@@ -5,6 +5,7 @@ import Scoreboard from './components/Scoreboard';
 import Jumbotron from './components/Jumbotron';
 import Container from './components/Container';
 import TowerCard from './components/TowerCard';
+import Footer from './components/Footer';
 
 
 class App extends Component {
