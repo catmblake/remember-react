@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import towers from './towers.json';
 import Scoreboard from './components/Scoreboard';
 import Jumbotron from './components/Jumbotron';
 import Container from './components/Container';
 import TowerCard from './components/TowerCard';
-import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -23,19 +21,19 @@ class App extends Component {
       if (id === card.id) {
         if (card.clicked === false) {
           card.clicked = true;
-          this.setState({ 
+          this.setState({
             score: this.state.score + 1,
-            message: "That was a great choice!" 
+            message: "That was a great choice!"
           });
           if (this.state.score >= this.state.topScore) {
-            this.setState({topScore: this.state.topScore +1})
+            this.setState({ topScore: this.state.topScore + 1 })
           }
-          
-        } 
+
+        }
         else {
           this.newRound();
         }
-      } 
+      }
       return newTowers;
     });
   }
@@ -48,8 +46,8 @@ class App extends Component {
       return tower.clicked = false;
     });
     this.setState({
-      message: "Uh oh, you already chose that one! \n Game restarted. Try Again!",
-      score: 0 
+      message: "Uh oh, you already chose that one! Game restarted. Try Again!",
+      score: 0
     });
   }
 
@@ -72,4 +70,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
