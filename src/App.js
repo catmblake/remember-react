@@ -33,14 +33,6 @@ class App extends Component {
       } 
       return newTowers;
     });
-    // when card is clicked on
-    // shuffle the array
-    // check if card has been clicked on before 
-        // if it has been
-        // reset the score 
-
-        // if it hasn't been
-        // update the score
   }
 
   newRound = () => {
