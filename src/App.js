@@ -16,17 +16,22 @@ class App extends Component {
   };
 
   handleClickEvent = id => {
-    this.state.towers.sort(() => Math.random() - 0.5)
+    let newTowers = this.state.towers.sort(() => Math.random() - 0.5)
     this.state.towers.filter(card => {
       if (id === card.id) {
         if (card.clicked === false) {
           card.clicked = true;
           this.setState({ score: this.state.score + 1 });
+          if (this.state.score >= this.state.topScore) {
+            this.setState({topScore: this.state.topScore +1})
+          }
           
-        } else {
+        } 
+        else {
           this.newRound();
         }
       } 
+      return newTowers;
     });
     // when card is clicked on
     // shuffle the array
